@@ -1,0 +1,17 @@
+{
+  "name": "Maitra Solar Solutions",
+  "short_name": "Maitra Solar",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#081a2a",
+  "theme_color": "#102a43",
+  "description": "Integrated solar plant solutions across engineering, EPC, O&M and due diligence.",
+  "icons": [
+    {
+      "src": "assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

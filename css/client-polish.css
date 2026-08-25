@@ -1,0 +1,408 @@
+/* ============================================================
+   CLIENT FEEDBACK POLISH — 2026
+   ============================================================ */
+
+/* Larger supporting typography across internal experience pages. */
+.ix-lead,
+.ix-copytext,
+.ix-command-intro > p,
+.ix-project-intro > p,
+.ix-contact-hero > p,
+.ix-dd-hero > p,
+.ix-om-copy > p:not(.ix-kicker),
+.ix-detail > p:not(.ix-kicker),
+.ix-detail .modal-sub {
+  font-size: 1.04rem;
+  line-height: 1.72;
+}
+
+.ix-service-copy small {
+  font-size: .98rem;
+  line-height: 1.58;
+}
+
+.ix-epc-stage small,
+.ix-dd-trigger small,
+.ix-contact-grid span,
+.ix-project-grid .g-project-copy p {
+  font-size: .86rem;
+  line-height: 1.55;
+}
+
+.ix-om-item strong { font-size: 1.02rem; }
+.ix-om-item em { font-size: .56rem; }
+
+/* Make the field video read as primary content rather than decoration. */
+.ix-om-media {
+  min-height: 450px;
+  border-color: #c9d8e4;
+  box-shadow: 0 20px 50px rgba(11,41,71,.10);
+}
+.ix-om-media video {
+  min-height: 450px;
+  object-position: center center;
+}
+.ix-om-media > div {
+  background: linear-gradient(180deg, rgba(5,19,32,.02), rgba(5,19,32,.56));
+}
+
+/* Contact service intents are now real, usable controls. */
+.ix-intents button {
+  appearance: none;
+  border: 0;
+  border-right: 1px solid var(--ix-line);
+  background: transparent;
+  color: var(--ix-blue);
+  padding: 14px 20px;
+  font: 800 .58rem/1 var(--font-mono);
+  letter-spacing: .12em;
+  text-align: left;
+  cursor: pointer;
+  transition: color .2s ease, background .2s ease, padding .2s ease;
+}
+.ix-intents button:last-child { border-right: 0; }
+.ix-intents button span {
+  display: inline-block;
+  margin-left: 8px;
+  opacity: .55;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.ix-intents button:hover,
+.ix-intents button:focus-visible {
+  color: var(--ix-navy);
+  background: rgba(23,105,255,.045);
+  outline: 0;
+}
+.ix-intents button:hover span,
+.ix-intents button:focus-visible span {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+/* Consultation options should not look disabled. */
+.choice-button span {
+  font-weight: 700;
+  border-color: #cbd9e5;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 3px 12px rgba(16,42,67,.045);
+}
+.choice-button:hover span,
+.choice-button:focus-visible span {
+  border-color: var(--blue-400);
+  background: #eef7fd;
+  box-shadow: 0 8px 22px rgba(16,42,67,.10);
+}
+
+@media (max-width: 700px) {
+  .ix-lead,
+  .ix-copytext,
+  .ix-command-intro > p,
+  .ix-project-intro > p,
+  .ix-contact-hero > p,
+  .ix-dd-hero > p,
+  .ix-om-copy > p:not(.ix-kicker),
+  .ix-detail > p:not(.ix-kicker),
+  .ix-detail .modal-sub {
+    font-size: .94rem;
+    line-height: 1.65;
+  }
+  .ix-service-copy small { font-size: .84rem; line-height: 1.52; }
+  .ix-epc-stage small,
+  .ix-dd-trigger small,
+  .ix-contact-grid span { font-size: .80rem; }
+  .ix-om-item strong { font-size: .98rem; }
+  .ix-om-media,
+  .ix-om-media video { min-height: 46svh; }
+  .ix-intents button {
+    min-height: 52px;
+    padding: 14px 12px;
+    font-size: .52rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .ix-intents button {
+    flex: 1 1 50%;
+    border-bottom: 1px solid var(--ix-line);
+  }
+  .ix-intents button:nth-child(2n) { border-right: 0; }
+  .ix-intents button:nth-last-child(-n+2) { border-bottom: 0; }
+}
+
+
+/* ============================================================
+   CLIENT CONTENT ADDITIONS — VALUES + CLIENT RELATIONSHIPS
+   ============================================================ */
+.ix-values-block {
+  margin-top: clamp(42px, 6vw, 76px);
+  padding-top: clamp(28px, 4vw, 48px);
+  border-top: 1px solid var(--ix-line);
+}
+.ix-values-block .ix-section-intro { margin-bottom: 24px; }
+.ix-values-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+.ix-value-card {
+  position: relative;
+  min-height: 250px;
+  padding: 18px 16px 20px;
+  border: 1px solid var(--ix-line);
+  border-radius: 18px;
+  background: rgba(255,255,255,.74);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform .35s var(--ix-ease), box-shadow .35s var(--ix-ease), border-color .35s var(--ix-ease);
+}
+.ix-value-card:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(11,41,71,.10); border-color: rgba(23,105,255,.25); }
+.ix-value-top { display:flex; justify-content:space-between; align-items:center; gap:10px; }
+.ix-value-top > span { font: 700 .55rem/1 var(--font-mono); letter-spacing:.14em; color:var(--ix-muted); }
+.ix-value-top > b {
+  width:54px; height:54px; border:2px solid currentColor; border-radius:50%;
+  display:grid; place-items:center; font:800 .78rem/1 var(--font-mono); letter-spacing:.08em;
+}
+.ix-value-card h4 { margin: 22px 0 12px; font: 800 .82rem/1.15 var(--font-mono); letter-spacing:.08em; text-transform:uppercase; color:var(--ix-navy); }
+.ix-value-card p { margin:0; margin-top:auto; color:var(--ix-steel); font-size:.76rem; line-height:1.55; }
+.ix-value-card::before { content:""; position:absolute; top:0; left:16px; width:38px; height:3px; background:currentColor; }
+.ix-value-card.accent-green { color:#2a9b62; }
+.ix-value-card.accent-blue { color:#006fb9; }
+.ix-value-card.accent-amber { color:#e7a300; }
+.ix-value-card.accent-cyan { color:#00a6b4; }
+.ix-value-card.accent-navy { color:#123e5c; }
+.ix-values-strip {
+  margin-top:18px; padding:12px 16px; border-radius:7px; background:var(--ix-navy); color:#fff;
+  text-align:center; font:800 .54rem/1.2 var(--font-mono); letter-spacing:.12em;
+}
+.ix-values-strip i { font-style:normal; opacity:.55; padding:0 7px; }
+
+.ix-clients { padding-bottom: clamp(28px, 5vw, 58px); }
+.ix-clients-hero {
+  display:grid; grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr); gap:clamp(24px,5vw,72px);
+  align-items:end; padding-bottom:clamp(28px,4vw,44px); border-bottom:1px solid var(--ix-line);
+}
+.ix-clients-hero h3 { margin:0; font:800 clamp(2.6rem,6vw,5.4rem)/.9 var(--font-display); letter-spacing:-.055em; color:var(--ix-navy); }
+.ix-clients-hero h3 span { color:var(--ix-blue); }
+.ix-clients-hero > p { margin:0; color:var(--ix-steel); max-width:520px; font-size:clamp(.9rem,1.2vw,1.05rem); line-height:1.65; }
+.ix-client-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; padding-top:28px; }
+.ix-client-card {
+  min-height:120px; padding:16px; border:1px solid var(--ix-line); border-radius:16px; background:#fff;
+  display:grid; grid-template-columns:auto 1fr; grid-template-rows:auto 1fr; gap:8px 12px; align-items:center;
+  transition:transform .3s var(--ix-ease), border-color .3s var(--ix-ease), box-shadow .3s var(--ix-ease);
+}
+.ix-client-card:hover { transform:translateY(-3px); border-color:rgba(23,105,255,.28); box-shadow:0 14px 30px rgba(11,41,71,.08); }
+.ix-client-num { grid-column:1; font:700 .52rem/1 var(--font-mono); color:var(--ix-muted); letter-spacing:.1em; align-self:start; }
+.ix-client-mark { grid-column:2; justify-self:end; width:12px; height:12px; border:2px solid var(--ix-blue); border-radius:50%; opacity:.75; }
+.ix-client-card strong { grid-column:1 / -1; align-self:center; font:800 .78rem/1.25 var(--font-mono); letter-spacing:.035em; color:var(--ix-navy); }
+.ix-client-footer { margin-top:22px; padding:12px 14px; border-top:1px solid var(--ix-line); text-align:center; display:flex; flex-direction:column; gap:6px; }
+.ix-client-footer strong { font:800 .56rem/1.2 var(--font-mono); letter-spacing:.08em; color:var(--ix-blue); }
+.ix-client-footer span { font-size:.72rem; color:var(--ix-steel); }
+
+@media (max-width: 900px) {
+  .ix-values-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .ix-value-card:last-child { grid-column:1 / -1; }
+  .ix-client-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .ix-clients-hero { grid-template-columns:1fr; }
+}
+@media (max-width: 600px) {
+  .ix-values-grid, .ix-client-grid { grid-template-columns:1fr; }
+  .ix-value-card, .ix-value-card:last-child { grid-column:auto; min-height:190px; }
+  .ix-value-top > b { width:48px; height:48px; }
+  .ix-value-card h4 { font-size:.76rem; }
+  .ix-value-card p { font-size:.82rem; }
+  .ix-values-strip { line-height:1.6; }
+  .ix-values-strip i { padding:0 3px; }
+  .ix-clients-hero h3 { font-size:clamp(2.7rem,14vw,4.2rem); }
+  .ix-client-card { min-height:100px; }
+  .ix-client-card strong { font-size:.8rem; }
+}
+
+/* ============================================================
+   PROJECT ASSIST — FINAL DELIVERY OVERRIDE
+   One authoritative positioning layer. Keep above the command dock.
+   ============================================================ */
+.project-assist-float {
+  position: fixed !important;
+  right: clamp(16px, 2.2vw, 32px) !important;
+  bottom: calc(clamp(62px, 8vh, 74px) + 18px) !important;
+  z-index: 1600 !important;
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  align-items: center !important;
+  gap: 10px !important;
+  min-height: 46px !important;
+  padding: 9px 14px 9px 10px !important;
+  border: 1px solid rgba(16,42,67,.18) !important;
+  border-radius: 3px !important;
+  background: rgba(255,255,255,.97) !important;
+  color: var(--ink) !important;
+  box-shadow: 0 14px 38px rgba(16,42,67,.22) !important;
+  backdrop-filter: blur(14px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(120%) !important;
+  transform: none !important;
+}
+
+.project-assist-float::before {
+  content: "";
+  width: 3px;
+  align-self: stretch;
+  background: var(--yellow-500);
+}
+
+.project-assist-float > span:last-child {
+  display: inline !important;
+  white-space: nowrap;
+  color: var(--ink) !important;
+  font: 800 .64rem/1 var(--font-mono) !important;
+  letter-spacing: .10em !important;
+  text-transform: uppercase !important;
+}
+
+.project-assist-float-icon {
+  width: 27px !important;
+  height: 27px !important;
+  flex: 0 0 27px !important;
+  border-radius: 2px !important;
+  background: var(--yellow-500) !important;
+  color: var(--ink) !important;
+  font-size: 1rem !important;
+}
+
+.project-assist-float:hover,
+.project-assist-float:focus-visible {
+  background: #fff !important;
+  border-color: rgba(255,196,0,.72) !important;
+  box-shadow: 0 18px 44px rgba(16,42,67,.24) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* The command dock remains visually primary, but Project Assist sits above it. */
+.hero-command-dock { z-index: 5 !important; }
+.modal-shell#consultShell { z-index: 1700 !important; }
+
+@media (max-width: 700px) {
+  .project-assist-float {
+    right: max(12px, var(--mobile-pad-final, 14px)) !important;
+    bottom: calc(12px + var(--mobile-safe-bottom-final, env(safe-area-inset-bottom, 0px))) !important;
+    min-width: 50px !important;
+    min-height: 50px !important;
+    padding: 9px 12px 9px 9px !important;
+    z-index: 1600 !important;
+  }
+
+  .project-assist-float > span:last-child {
+    display: inline !important;
+    font-size: .56rem !important;
+    letter-spacing: .08em !important;
+  }
+
+  .project-assist-float-icon {
+    width: 28px !important;
+    height: 28px !important;
+    flex-basis: 28px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .project-assist-float > span:last-child { font-size: .52rem !important; }
+}
+
+
+/* ============================================================
+   PROJECTS — BRIGHT THEME COLOR-ONLY OVERRIDE
+   Structure, spacing, imagery and interactions remain unchanged.
+   ============================================================ */
+.panel-shell[data-panel="projects"] .panel-header {
+  background: rgba(255,255,255,.985) !important;
+  border-bottom-color: var(--ix-line) !important;
+}
+.panel-shell[data-panel="projects"] .panel-title {
+  color: var(--ix-navy) !important;
+}
+.panel-shell[data-panel="projects"] .panel-heading .eyebrow {
+  color: #ae7000 !important;
+}
+.panel-shell[data-panel="projects"] .panel-close {
+  background: var(--ix-white) !important;
+  color: var(--ix-navy) !important;
+  border-color: var(--ix-line) !important;
+}
+.panel-shell[data-panel="projects"] .panel-close:hover,
+.panel-shell[data-panel="projects"] .panel-close:focus-visible {
+  background: var(--ix-navy) !important;
+  color: var(--ix-white) !important;
+  border-color: var(--ix-navy) !important;
+}
+.panel-shell[data-panel="projects"] .panel-body {
+  background-color: var(--ix-paper) !important;
+  background-image:
+    linear-gradient(rgba(11,41,71,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11,41,71,.035) 1px, transparent 1px) !important;
+  background-size: 48px 48px !important;
+}
+.panel-shell[data-panel="projects"] .ix-scroll-rail::before {
+  background: rgba(11,41,71,.10) !important;
+}
+.panel-shell[data-panel="projects"] .ix-scroll-rail span {
+  background: var(--ix-amber) !important;
+}
+
+.panel-shell[data-panel="projects"] .ix-projects {
+  background: var(--ix-paper) !important;
+  color: var(--ix-navy) !important;
+  background-image:
+    linear-gradient(rgba(11,41,71,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11,41,71,.035) 1px, transparent 1px) !important;
+  background-size: 48px 48px !important;
+}
+.panel-shell[data-panel="projects"] .ix-projects h3 {
+  color: var(--ix-navy) !important;
+}
+.panel-shell[data-panel="projects"] .ix-projects h3 span,
+.panel-shell[data-panel="projects"] .ix-projects .ix-kicker {
+  color: #ae7000 !important;
+}
+.panel-shell[data-panel="projects"] .ix-project-intro > p {
+  color: var(--ix-steel) !important;
+}
+.panel-shell[data-panel="projects"] .ix-project-tools {
+  border-top-color: var(--ix-line) !important;
+  border-bottom-color: var(--ix-line) !important;
+}
+.panel-shell[data-panel="projects"] .filter-btn {
+  border-color: var(--ix-line) !important;
+  background: rgba(255,255,255,.72) !important;
+  color: var(--ix-navy) !important;
+}
+.panel-shell[data-panel="projects"] .filter-btn:hover,
+.panel-shell[data-panel="projects"] .filter-btn:focus-visible {
+  border-color: var(--ix-blue) !important;
+  color: var(--ix-navy) !important;
+  background: var(--ix-white) !important;
+}
+.panel-shell[data-panel="projects"] .filter-btn.is-active {
+  color: var(--ix-ink) !important;
+  background: var(--ix-amber) !important;
+  border-color: var(--ix-amber) !important;
+}
+.panel-shell[data-panel="projects"] .gallery-count,
+.panel-shell[data-panel="projects"] .ix-project-meta {
+  color: var(--ix-muted) !important;
+}
+.panel-shell[data-panel="projects"] .ix-project-grid .g-item {
+  border-color: var(--ix-line) !important;
+  background: var(--ix-white) !important;
+}
+.panel-shell[data-panel="projects"] .ix-project-grid .g-tag {
+  background: rgba(255,255,255,.92) !important;
+  border-color: var(--ix-line) !important;
+  color: #9b6b00 !important;
+}
+.panel-shell[data-panel="projects"] .ix-project-grid .g-project-action {
+  border-color: rgba(255,255,255,.70) !important;
+  color: var(--ix-white) !important;
+}
